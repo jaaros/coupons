@@ -1,4 +1,5 @@
 import React from "react";
+import { css } from "../../styled-system/css";
 
 interface DiscountCode {
   id: number;
@@ -32,33 +33,55 @@ export default function DiscountCodeList({ codes, onUseCode }: Props) {
   });
 
   return (
-    <div>
-      <h2 className="text-xl font-bold mb-4">
-        Available Discount Codes (Sorted by Category and Expiration Date)
-      </h2>
+    <div className="bg-gray-50 p-4 rounded-lg">
       {sortedCodes.length === 0 ? (
-        <p>No available discount codes at the moment.</p>
+        <p className="text-gray-500 italic">
+          No available discount codes at the moment.
+        </p>
       ) : (
-        <ul className="space-y-4">
+        <ul
+          className={css({
+            spaceY: 4,
+          })}
+        >
           {sortedCodes.map((code, index, array) => (
             <React.Fragment key={code.id}>
               {(index === 0 || code.category !== array[index - 1].category) && (
-                <h3 className="text-lg font-semibold mt-4 mb-2">
+                // <h3 className="text-lg font-semibold mt-4 mb-2 text-gray-700">
+                <h3
+                  className={css({
+                    fontSize: "lg",
+                    fontWeight: "semibold",
+                    mt: 4,
+                    mb: 2,
+                    color: "gray.700",
+                    bgColor: "red",
+                  })}
+                >
                   {code.category}
                 </h3>
               )}
-              <li className="border p-2 rounded flex justify-between items-center">
-                <div>
-                  <strong>{code.code}</strong> - Expires:{" "}
-                  {new Date(code.expiration_date).toLocaleDateString()} -
-                  Description: <em>{code.description}</em>
+              <li className="bg-white shadow-sm rounded-md p-4">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <span className="font-bold text-indigo-600">
+                      {code.code}
+                    </span>
+                    <p className="text-sm text-gray-500">
+                      Expires:{" "}
+                      {new Date(code.expiration_date).toLocaleDateString()}
+                    </p>
+                    <p className="text-sm text-gray-700 mt-1">
+                      {code.description}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => onUseCode(code)}
+                    className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition duration-150 ease-in-out"
+                  >
+                    Use
+                  </button>
                 </div>
-                <button
-                  onClick={() => onUseCode(code)}
-                  className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-4"
-                >
-                  Use
-                </button>
               </li>
             </React.Fragment>
           ))}

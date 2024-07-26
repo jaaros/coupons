@@ -55,10 +55,24 @@ export default function DiscountCodeManager() {
   };
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">Discount Code Manager</h1>
-      <DiscountCodeForm onCodeAdded={fetchDiscountCodes} />
-      <DiscountCodeList codes={discountCodes} onUseCode={handleUseCode} />
+    <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+      <h1 className="text-3xl font-bold mb-8 text-center text-gray-800">
+        Discount Code Manager
+      </h1>
+      <div className="grid md:grid-cols-2 gap-8">
+        <div>
+          <h2 className="text-xl font-semibold mb-4 text-gray-700">
+            Add New Code
+          </h2>
+          <DiscountCodeForm onCodeAdded={fetchDiscountCodes} />
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold mb-4 text-gray-700">
+            Available Codes
+          </h2>
+          <DiscountCodeList codes={discountCodes} onUseCode={handleUseCode} />
+        </div>
+      </div>
     </div>
   );
 }

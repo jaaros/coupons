@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { supabase } from "../lib/supabaseClient";
+import { css } from "../../styled-system/css";
 
 interface Props {
   onCodeAdded: () => void;
@@ -34,46 +35,77 @@ export default function DiscountCodeForm({ onCodeAdded }: Props) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mb-8">
-      <div className="mb-4">
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div>
+        <label
+          htmlFor="code"
+          className="block text-sm font-medium text-gray-700"
+        >
+          Discount Code
+        </label>
         <input
+          id="code"
           type="text"
           value={code}
           onChange={(e) => setCode(e.target.value)}
-          placeholder="Discount Code"
+          placeholder="Enter discount code"
           required
-          className="w-full p-2 border rounded"
+          className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         />
       </div>
-      <div className="mb-4">
+      <div>
+        <label
+          htmlFor="category"
+          className="block text-sm font-medium text-gray-700"
+        >
+          Category
+        </label>
         <input
+          id="category"
           type="text"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          placeholder="Category"
+          placeholder="Enter category"
           required
-          className="w-full p-2 border rounded"
+          className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         />
       </div>
-      <div className="mb-4">
+      <div>
+        <label
+          htmlFor="expirationDate"
+          className="block text-sm font-medium text-gray-700"
+        >
+          Expiration Date
+        </label>
         <input
+          id="expirationDate"
           type="date"
           value={expirationDate}
           onChange={(e) => setExpirationDate(e.target.value)}
           required
-          className="w-full p-2 border rounded"
+          className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         />
       </div>
-      <div className="mb-4">
+      <div>
+        <label
+          htmlFor="description"
+          className="block text-sm font-medium text-gray-700"
+        >
+          Description
+        </label>
         <input
+          id="description"
           type="text"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          placeholder="Description"
-          className="w-full p-2 border rounded"
+          placeholder="Enter description"
+          className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
         />
       </div>
-      <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+      <button
+        type="submit"
+        className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+      >
         Add Discount Code
       </button>
     </form>
