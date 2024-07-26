@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { supabase } from "../lib/supabaseClient";
 import DiscountCodeForm from "./DiscountCodeForm";
 import DiscountCodeList from "./DiscountCodeList";
+import { css } from "../../styled-system/css";
 
 interface DiscountCode {
   id: number;
@@ -55,19 +56,50 @@ export default function DiscountCodeManager() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
-      <h1 className="text-3xl font-bold mb-8 text-center text-gray-800">
+    <div
+      className={css({
+        maxWidth: "4xl",
+        mx: "auto",
+        p: 6,
+        bgColor: "white",
+        shadow: "lg",
+        rounded: "lg",
+      })}
+    >
+      <h1
+        className={css({
+          fontSize: "3xl",
+          fontWeight: "bold",
+          mb: 8,
+          textAlign: "center",
+          color: "gray.800",
+        })}
+      >
         Discount Code Manager
       </h1>
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className={css({ grid: "md", gap: 8 })}>
         <div>
-          <h2 className="text-xl font-semibold mb-4 text-gray-700">
+          <h2
+            className={css({
+              fontSize: "xl",
+              fontStyle: "semibold",
+              mb: 4,
+              color: "gray.700",
+            })}
+          >
             Add New Code
           </h2>
           <DiscountCodeForm onCodeAdded={fetchDiscountCodes} />
         </div>
         <div>
-          <h2 className="text-xl font-semibold mb-4 text-gray-700">
+          <h2
+            className={css({
+              fontSize: "xl",
+              fontStyle: "semibold",
+              mb: 4,
+              color: "gray.700",
+            })}
+          >
             Available Codes
           </h2>
           <DiscountCodeList codes={discountCodes} onUseCode={handleUseCode} />

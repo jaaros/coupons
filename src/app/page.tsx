@@ -9,19 +9,9 @@ export default function Home() {
         className={css({
           minHeight: "100vh",
           padding: "2rem",
-          backgroundColor: "blue.100",
+          backgroundColor: "blue.50",
         })}
       >
-        <h1
-          className={css({
-            backgroundColor: "red",
-          })}
-        >
-          Discount Code Manager
-        </h1>
-        <p className={styles.subtitle}>
-          Manage your discount codes efficiently
-        </p>
         <DiscountCodeManager />
       </div>
     </div>

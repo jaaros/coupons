@@ -50,13 +50,23 @@ export default function DiscountCodeForm({ onCodeAdded }: Props) {
           onChange={(e) => setCode(e.target.value)}
           placeholder="Enter discount code"
           required
-          className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          className={css({
+            mt: 1,
+            px: 3,
+            py: 2,
+            bgColor: "white",
+            border: 1,
+            borderColor: "gray.300",
+            blockSize: 1,
+            rounded: "md",
+            shadow: "sm",
+          })}
         />
       </div>
       <div>
         <label
           htmlFor="category"
-          className="block text-sm font-medium text-gray-700"
+          className={css({ blockSize: 1, fontSize: "sm", color: "gray.700" })}
         >
           Category
         </label>
@@ -67,13 +77,24 @@ export default function DiscountCodeForm({ onCodeAdded }: Props) {
           onChange={(e) => setCategory(e.target.value)}
           placeholder="Enter category"
           required
-          className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          className={css({
+            mt: 1,
+            blockSize: 1,
+            width: "full",
+            px: 3,
+            py: 2,
+            bgColor: "white",
+            border: 1,
+            borderColor: "gray.300",
+            rounded: "md",
+            shadow: "sm",
+          })}
         />
       </div>
       <div>
         <label
           htmlFor="expirationDate"
-          className="block text-sm font-medium text-gray-700"
+          className={css({ blockSize: 1, fontSize: "sm", color: "gray.700" })}
         >
           Expiration Date
         </label>
@@ -83,13 +104,24 @@ export default function DiscountCodeForm({ onCodeAdded }: Props) {
           value={expirationDate}
           onChange={(e) => setExpirationDate(e.target.value)}
           required
-          className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          className={css({
+            mt: 1,
+            blockSize: 1,
+            width: "full",
+            px: 3,
+            py: 2,
+            bgColor: "white",
+            border: 1,
+            borderColor: "gray.300",
+            rounded: "sm",
+            shadow: "sm",
+          })}
         />
       </div>
       <div>
         <label
           htmlFor="description"
-          className="block text-sm font-medium text-gray-700"
+          className={css({ blockSize: 1, fontSize: "sm", color: "gray.700" })}
         >
           Description
         </label>
@@ -99,12 +131,33 @@ export default function DiscountCodeForm({ onCodeAdded }: Props) {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Enter description"
-          className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+          className={css({
+            mt: 1,
+            blockSize: 1,
+            width: "full",
+            px: 3,
+            py: 2,
+            bgColor: "white",
+            border: 1,
+            borderColor: "gray.300",
+            rounded: "md",
+            shadow: "sm",
+          })}
         />
       </div>
       <button
         type="submit"
-        className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        className={css({
+          width: "full",
+          py: 2,
+          px: 4,
+          border: 1,
+          rounded: "sm",
+          shadow: "sm",
+          fontSize: "sm",
+          color: "white",
+          bgColor: "indigo.600",
+        })}
       >
         Add Discount Code
       </button>
