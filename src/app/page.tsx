@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import DiscountCodeManager from "../components/DiscountCodeManager";
 import { css } from "../../styled-system/css";
+import { SignIn } from "@clerk/nextjs";
 
 export default function Home() {
   return (
