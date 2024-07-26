@@ -28,6 +28,7 @@ export default function DiscountCodeForm({ onCodeAdded }: Props) {
       setCode("");
       setCategory("");
       setExpirationDate("");
+      setDescription("");
       onCodeAdded();
     }
   }
