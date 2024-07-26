@@ -98,6 +98,7 @@ export default function DiscountCodeManager() {
               fontStyle: "semibold",
               mb: 4,
               color: "gray.700",
+              mt: 2,
             })}
           >
             Available Codes

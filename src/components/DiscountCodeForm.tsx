@@ -35,13 +35,13 @@ export default function DiscountCodeForm({ onCodeAdded }: Props) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
+    <form onSubmit={handleSubmit} className={css({ spaceY: 4 })}>
+      <div className={css({ spaceX: 4 })}>
         <label
           htmlFor="code"
-          className="block text-sm font-medium text-gray-700"
+          className={css({ fontSize: "sm", color: "gray.700" })}
         >
-          Discount Code
+          Discount Code:
         </label>
         <input
           id="code"
@@ -57,7 +57,6 @@ export default function DiscountCodeForm({ onCodeAdded }: Props) {
             bgColor: "white",
             border: 1,
             borderColor: "gray.300",
-            blockSize: 1,
             rounded: "md",
             shadow: "sm",
           })}
@@ -79,7 +78,6 @@ export default function DiscountCodeForm({ onCodeAdded }: Props) {
           required
           className={css({
             mt: 1,
-            blockSize: 1,
             width: "full",
             px: 3,
             py: 2,
@@ -106,7 +104,6 @@ export default function DiscountCodeForm({ onCodeAdded }: Props) {
           required
           className={css({
             mt: 1,
-            blockSize: 1,
             width: "full",
             px: 3,
             py: 2,
@@ -133,7 +130,6 @@ export default function DiscountCodeForm({ onCodeAdded }: Props) {
           placeholder="Enter description"
           className={css({
             mt: 1,
-            blockSize: 1,
             width: "full",
             px: 3,
             py: 2,

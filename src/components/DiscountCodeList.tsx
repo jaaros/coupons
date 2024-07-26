@@ -51,7 +51,6 @@ export default function DiscountCodeList({ codes, onUseCode }: Props) {
                   className={css({
                     fontSize: "lg",
                     fontWeight: "semibold",
-                    mt: 4,
                     mb: 2,
                     color: "gray.700",
                   })}
@@ -59,7 +58,14 @@ export default function DiscountCodeList({ codes, onUseCode }: Props) {
                   {code.category}
                 </h3>
               )}
-              <li className="bg-white shadow-sm rounded-md p-4">
+              <li
+                className={css({
+                  bgColor: "white",
+                  shadow: "sm",
+                  rounded: "md",
+                  p: 4,
+                })}
+              >
                 <div
                   className={css({
                     flex: "1",
@@ -89,8 +95,8 @@ export default function DiscountCodeList({ codes, onUseCode }: Props) {
                       className={css({
                         fontSize: "sm",
                         color: "gray.700",
-                        mt: 1,
                         fontStyle: "italic",
+                        mt: 1,
                       })}
                     >
                       {code.description}
@@ -104,9 +110,10 @@ export default function DiscountCodeList({ codes, onUseCode }: Props) {
                       fontWeight: "bold",
                       py: 2,
                       px: 4,
+                      mt: 2,
                       rounded: "full",
                       transition: "ease-out",
-                      transitionDuration: "0.15s",
+                      transitionDuration: "0.5",
                     })}
                   >
                     Use
