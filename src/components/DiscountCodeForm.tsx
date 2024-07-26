@@ -11,6 +11,7 @@ export default function DiscountCodeForm({ onCodeAdded }: Props) {
   const [code, setCode] = useState("");
   const [category, setCategory] = useState("");
   const [expirationDate, setExpirationDate] = useState("");
+  const [description, setDescription] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -18,6 +19,7 @@ export default function DiscountCodeForm({ onCodeAdded }: Props) {
       code,
       category,
       expiration_date: expirationDate,
+      description,
     });
 
     if (error) {
@@ -58,6 +60,15 @@ export default function DiscountCodeForm({ onCodeAdded }: Props) {
           value={expirationDate}
           onChange={(e) => setExpirationDate(e.target.value)}
           required
+          className="w-full p-2 border rounded"
+        />
+      </div>
+      <div className="mb-4">
+        <input
+          type="text"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          placeholder="Description"
           className="w-full p-2 border rounded"
         />
       </div>

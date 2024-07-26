@@ -3,6 +3,7 @@ interface DiscountCode {
   code: string;
   category: string;
   expiration_date: string;
+  description: string;
 }
 
 interface Props {
@@ -19,7 +20,8 @@ export default function DiscountCodeList({ codes }: Props) {
         {codes.map((code) => (
           <li key={code.id} className="border p-2 rounded">
             <strong>{code.code}</strong> - {code.category} - Expires:{" "}
-            {new Date(code.expiration_date).toLocaleDateString()}
+            {new Date(code.expiration_date).toLocaleDateString()} - Description:{" "}
+            <em>{code.description}</em>
           </li>
         ))}
       </ul>
